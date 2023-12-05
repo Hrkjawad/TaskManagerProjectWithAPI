@@ -184,7 +184,6 @@ class _UpdateProfileState extends State<UpdateProfile> {
                             decoration: const InputDecoration(
                               hintText: 'Last Name',
                             ),
-
                             controller: lastNameController,
                             validator: (value) {
                               if (value?.isEmpty ?? true) {
@@ -269,7 +268,8 @@ class _UpdateProfileState extends State<UpdateProfile> {
                   title: const Text('Gallery'),
                   leading: const Icon(Icons.image),
                   onTap: () async {
-                    pickedImage = await ImagePicker().pickImage(source: ImageSource.gallery);
+                    pickedImage = await ImagePicker()
+                        .pickImage(source: ImageSource.gallery);
                     if (pickedImage != null) {
                       setState(() {});
                     }

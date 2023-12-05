@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:task_manager_assignment/Datas/NetUtils.dart';
-
 import 'package:task_manager_assignment/Datas/SnackbarMessage.dart';
 import 'package:task_manager_assignment/Datas/Urls.dart';
+import 'package:task_manager_assignment/Screens/MainPage.dart';
+import 'package:task_manager_assignment/Screens/NewTaskPage.dart';
 
 
 editTaskList(String currentStatus, String taskId, VoidCallback onChangeTaskStatus, BuildContext context) {
@@ -58,7 +59,7 @@ editTaskList(String currentStatus, String taskId, VoidCallback onChangeTaskStatu
                   final response = await NetworkUtils().getMethod(Urls.changeTaskUrl(taskId, statusValue));
                   if (response != null) {
                     onChangeTaskStatus();
-                    Navigator.pop(context);
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => MainPage()));
                   } else {
                     SnackBarMessage(
                       context,
