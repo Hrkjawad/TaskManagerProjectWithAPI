@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:task_manager_assignment/Screens/OpeningScreen.dart';
 
-void main(){
+void main() {
   runApp(const TaskManager());
 }
 
@@ -32,15 +32,12 @@ class _TaskManagerState extends State<TaskManager> {
             borderSide: BorderSide.none,
           ),
         ),
-
         textTheme: const TextTheme(
           titleLarge: TextStyle(
             fontSize: 24,
             fontWeight: FontWeight.bold,
           ),
         ),
-
-
       ),
       home: const OpeningScreen(),
     );
